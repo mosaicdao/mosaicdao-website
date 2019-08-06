@@ -2,14 +2,47 @@
   "name": "mosaicdao-website",
   "version": "1.0.0",
   "description": "Portal website to Mosaic DAO",
+  "author": "Benjamin Bollen <ben@ost.com>",
   "main": "index.js",
-  "dependencies": {
-    "bootstrap": "^4.3.1"
+  "private": true,
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "devDependencies": {},
+  "browserslist": [
+    "> 0.25%",
+    "ie >= 11",
+    "not op_mini all",
+    "not dead"
+  ],
   "scripts": {
+    "sass:compile": "node_modules/.bin/node-sass-chokidar --include-path ./src --include-path ./node_modules src/assets/scss/ -o public/css/",
+    "sass:autoprefixer": "node_modules/.bin/postcss public/css/*.css --use autoprefixer -d public/css",
+    "build:css": "node_modules/.bin/npm-run-all sass:*",
+    "build:js": "node_modules/.bin/react-scripts build",
+    "watch:css": "node_modules/.bin/chokidar \"src/assets/scss/**/*\" -c \"npm run build:css\"",
+    "watch:js": "node_modules/.bin/react-scripts start",
+    "start": "node_modules/.bin/npm-run-all -p build:css watch:*",
+    "build": "node_modules/.bin/npm-run-all -p build:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "chokidar-cli": "^2.0.0",
+    "jquery": "3.4.1",
+    "node-sass": "^4.12.0",
+    "node-sass-chokidar": "^1.3.5",
+    "npm-run-all": "4.1.5",
+    "popper.js": "1.15.0",
+    "postcss-cli": "^6.1.3",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-redux": "7.1.0",
+    "react-redux-toastr": "7.5.1",
+    "react-scripts": "3.0.1",
+    "redux": "4.0.4",
+    "typescript": "3.5.3"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mosaicdao/mosaicdao-website.git"
@@ -19,7 +52,6 @@
     "Ethereum",
     "DAO"
   ],
-  "author": "MosaicDAO",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mosaicdao/mosaicdao-website/issues"
