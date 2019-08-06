@@ -1,0 +1,28 @@
+{
+  "name": "mosaicdao-website",
+  "version": "1.0.0",
+  "description": "Portal website to Mosaic DAO",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosaicdao/mosaicdao-website.git"
+  },
+  "keywords": [
+    "Mosaic",
+    "Ethereum",
+    "DAO"
+  ],
+  "author": "MosaicDAO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mosaicdao/mosaicdao-website/issues"
+  },
+  "homepage": "http://mosaicdao.org"
+}
